@@ -1,5 +1,5 @@
-import './App.css';
-import { useState, useRef, useEffect } from "react";
+import "./App.css";
+import { useState, useRef } from "react";
 import logo from "./images/ai-la-trieu-phu-logo.png";
 import anhBacSam from "./images/anh-bac-sam.jpg";
 import help_5050 from "./images/help-50-50.png";
@@ -16,7 +16,7 @@ const DATA = [
     answerB: "B: Vẫn thế",
     answerC: "C: Chói",
     answerD: "D: Sáng",
-    answerCorrect: "D: Sáng"
+    answerCorrect: "D: Sáng",
   },
   {
     id: "2",
@@ -25,7 +25,7 @@ const DATA = [
     answerB: "B: 18",
     answerC: "C: 20",
     answerD: "D: 24",
-    answerCorrect: "A: 22"
+    answerCorrect: "A: 22",
   },
   {
     id: "3",
@@ -34,7 +34,7 @@ const DATA = [
     answerB: "B: Hổ",
     answerC: "C: Rồng",
     answerD: "D: Báo",
-    answerCorrect: "D: Báo"
+    answerCorrect: "D: Báo",
   },
   {
     id: "4",
@@ -43,7 +43,7 @@ const DATA = [
     answerB: "B: 15",
     answerC: "C: 16",
     answerD: "D: 17",
-    answerCorrect: "B: 15"
+    answerCorrect: "B: 15",
   },
   {
     id: "5",
@@ -52,16 +52,17 @@ const DATA = [
     answerB: "B: Đức",
     answerC: "C: Anh",
     answerD: "D: Peru",
-    answerCorrect: "C: Anh"
+    answerCorrect: "C: Anh",
   },
   {
     id: "6",
-    question: "Tính đến năm 8/2021 ai là cầu thủ sở hữu nhiều danh hiệu Quả bóng vàng nhất?",
+    question:
+      "Tính đến năm 8/2021 ai là cầu thủ sở hữu nhiều danh hiệu Quả bóng vàng nhất?",
     answerA: "A: Diego Maradona",
     answerB: "B: Ronaldinho",
     answerC: "C: Cristiano Ronaldo",
     answerD: "D: Lionel Messi",
-    answerCorrect: "D: Lionel Messi"
+    answerCorrect: "D: Lionel Messi",
   },
   {
     id: "7",
@@ -70,7 +71,7 @@ const DATA = [
     answerB: "B: To",
     answerC: "C: Bơi nhanh",
     answerD: "D: Lặn",
-    answerCorrect: "B: To"
+    answerCorrect: "B: To",
   },
   {
     id: "8",
@@ -79,7 +80,7 @@ const DATA = [
     answerB: "B: Baht",
     answerC: "C: Rupiah",
     answerD: "D: Euro",
-    answerCorrect: "D: Euro"
+    answerCorrect: "D: Euro",
   },
   {
     id: "9",
@@ -88,7 +89,7 @@ const DATA = [
     answerB: "B: Thứ 2",
     answerC: "C: Thứ 9",
     answerD: "D: Thứ 5",
-    answerCorrect: "B: Thứ 2"
+    answerCorrect: "B: Thứ 2",
   },
   {
     id: "10",
@@ -97,7 +98,7 @@ const DATA = [
     answerB: "B: John Adams",
     answerC: "C: John F. Kennedy",
     answerD: "D: Richard Nixon",
-    answerCorrect: "A: Abraham Lincoln"
+    answerCorrect: "A: Abraham Lincoln",
   },
   {
     id: "11",
@@ -106,16 +107,17 @@ const DATA = [
     answerB: "B: Đại dịch cúm",
     answerC: "C: Đại dịch Ebola",
     answerD: "D: Đại dịch tả",
-    answerCorrect: "C: Đại dịch Ebola"
+    answerCorrect: "C: Đại dịch Ebola",
   },
   {
     id: "12",
-    question: "Diễn viên lồng tiếng cho nhân vật Groot trong phim Vệ binh giải ngân hà là ai?",
+    question:
+      "Diễn viên lồng tiếng cho nhân vật Groot trong phim Vệ binh giải ngân hà là ai?",
     answerA: "A: Chris Pratt",
     answerB: "B: Vin Diesel",
     answerC: "C: Leonardo DiCaprio",
     answerD: "D: James Gunn",
-    answerCorrect: "B: Vin Diesel"
+    answerCorrect: "B: Vin Diesel",
   },
   {
     id: "13",
@@ -124,7 +126,7 @@ const DATA = [
     answerB: "B: 1995",
     answerC: "C: 1996",
     answerD: "D: 1998",
-    answerCorrect: "A: 1997"
+    answerCorrect: "A: 1997",
   },
   {
     id: "14",
@@ -133,19 +135,19 @@ const DATA = [
     answerB: "B: 832m",
     answerC: "C: 819m",
     answerD: "D: 828m",
-    answerCorrect: "D: 828m"
+    answerCorrect: "D: 828m",
   },
   {
     id: "15",
-    question: "Ký tự duy nhất không xuất hiện trong bảng tuần hoàn các nguyên tố hóa học là gì?",
+    question:
+      "Ký tự duy nhất không xuất hiện trong bảng tuần hoàn các nguyên tố hóa học là gì?",
     answerA: "A: R",
     answerB: "B: U",
     answerC: "C: J",
     answerD: "D: Z",
-    answerCorrect: "C: J"
+    answerCorrect: "C: J",
   },
 ];
-
 
 let answerTemp = "";
 function App() {
@@ -163,63 +165,63 @@ function App() {
   const [help5050Img, setHelp5050Img] = useState(help_5050);
   const [question1, setQuestion1] = useState({
     backgroundColor: "#ffc919",
-    color: "#222"
+    color: "#222",
   });
   const [question2, setQuestion2] = useState({
     backgroundColor: "transparent",
-    color: "#edbc1a"
+    color: "#edbc1a",
   });
   const [question3, setQuestion3] = useState({
     backgroundColor: "transparent",
-    color: "#edbc1a"
+    color: "#edbc1a",
   });
   const [question4, setQuestion4] = useState({
     backgroundColor: "transparent",
-    color: "#edbc1a"
+    color: "#edbc1a",
   });
   const [question5, setQuestion5] = useState({
     backgroundColor: "transparent",
-    color: "white"
+    color: "white",
   });
   const [question6, setQuestion6] = useState({
     backgroundColor: "transparent",
-    color: "#edbc1a"
+    color: "#edbc1a",
   });
   const [question7, setQuestion7] = useState({
     backgroundColor: "transparent",
-    color: "#edbc1a"
+    color: "#edbc1a",
   });
   const [question8, setQuestion8] = useState({
     backgroundColor: "transparent",
-    color: "#edbc1a"
+    color: "#edbc1a",
   });
   const [question9, setQuestion9] = useState({
     backgroundColor: "transparent",
-    color: "#edbc1a"
+    color: "#edbc1a",
   });
   const [question10, setQuestion10] = useState({
     backgroundColor: "transparent",
-    color: "white"
+    color: "white",
   });
   const [question11, setQuestion11] = useState({
     backgroundColor: "transparent",
-    color: "#edbc1a"
+    color: "#edbc1a",
   });
   const [question12, setQuestion12] = useState({
     backgroundColor: "transparent",
-    color: "#edbc1a"
+    color: "#edbc1a",
   });
   const [question13, setQuestion13] = useState({
     backgroundColor: "transparent",
-    color: "#edbc1a"
+    color: "#edbc1a",
   });
   const [question14, setQuestion14] = useState({
     backgroundColor: "transparent",
-    color: "#edbc1a"
+    color: "#edbc1a",
   });
   const [question15, setQuestion15] = useState({
     backgroundColor: "transparent",
-    color: "white"
+    color: "white",
   });
   const [bountyValue, setBountyValue] = useState("0");
   const [helpAskTheSpectatorImg, setHelpAskTheSpectatorImg] = useState(
@@ -243,22 +245,22 @@ function App() {
     src: ["/sounds/am-thanh-khi-tra-loi-first.mp3"],
     loop: true,
     html5: true,
-    volume: 0.5
+    volume: 0.5,
   });
   let amThanhKhiChon = new Howl({
     src: ["/sounds/am-thanh-khi-chon.mp3"],
     loop: false,
-    html5: true
+    html5: true,
   });
   let amThanhTraloiDung = new Howl({
     src: ["/sounds/am-thanh-tra-loi-dung.mp3"],
     loop: false,
-    html5: true
+    html5: true,
   });
   let amThanhTraLoiSai = new Howl({
     src: ["/sounds/am-thanh-tra-loi-sai.mp3"],
     loop: false,
-    html5: true
+    html5: true,
   });
   let amThanh5050 = new Howl({
     src: ["/sounds/am-thanh-5050.mp3"],
@@ -268,7 +270,7 @@ function App() {
   let amThanhKhiHoiKhanGia = new Howl({
     src: ["/sounds/am-thanh-khi-hoi-y-kien-khan-gia.mp3"],
     loop: false,
-    html5: true
+    html5: true,
   });
 
   const intoTheGame = () => {
@@ -305,6 +307,10 @@ function App() {
     percentValidB.current = 0;
     percentValidC.current = 0;
     percentValidD.current = 0;
+    setAnswerAState(false);
+    setAnswerBState(false);
+    setAnswerCState(false);
+    setAnswerDState(false);
     Howler.stop();
   };
 
@@ -440,6 +446,7 @@ function App() {
       if (DATA[questionCount].answerD !== DATA[questionCount].answerCorrect) {
         arrIncorrect.push(DATA[questionCount].answerD);
       }
+
       let incorrectItem =
         arrIncorrect[Math.floor(Math.random() * arrIncorrect.length)];
 
@@ -482,14 +489,13 @@ function App() {
     amThanhKhiHoiKhanGia.play();
     askTheSpectator.current.style.display = "flex";
     setHelpAskTheSpectatorImg(help_ask_the_spectator_disable_img);
-    console.log(newArrIncorrect);
-
-    let percentValidATemp = 1;
-    let percentValidBTemp = 1;
-    let percentValidCTemp = 1;
-    let percentValidDTemp = 1;
 
     if (newArrIncorrect.current.length !== 0) {
+      let percentValidATemp = 1;
+      let percentValidBTemp = 1;
+      let percentValidCTemp = 1;
+      let percentValidDTemp = 1;
+
       for (let i = 0; i < newArrIncorrect.current.length; i++) {
         if (
           newArrIncorrect.current[i] === DATA[questionCount].answerA ||
@@ -501,7 +507,7 @@ function App() {
         }
         if (
           newArrIncorrect.current[i] === DATA[questionCount].answerB ||
-          percentValidDTemp === 0
+          percentValidBTemp === 0
         ) {
           percentValidBTemp = 0;
         } else {
@@ -511,7 +517,7 @@ function App() {
         }
         if (
           newArrIncorrect.current[i] === DATA[questionCount].answerC ||
-          percentValidDTemp === 0
+          percentValidCTemp === 0
         ) {
           percentValidCTemp = 0;
         } else {
