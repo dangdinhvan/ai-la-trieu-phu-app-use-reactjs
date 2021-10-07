@@ -462,7 +462,7 @@ function App() {
       </div>
       <div id="process">
         <div id="helps">
-          <div id="help-50-50" onClick={help5050}><img src={help5050Img} /></div>
+          <div id="help-50-50" onClick={help5050}><img src={help5050Img} alt="help-5050"/></div>
         </div>
         <div id="total-question">
           <div className="question-of-process" style={{ backgroundColor: question15.backgroundColor }}>
