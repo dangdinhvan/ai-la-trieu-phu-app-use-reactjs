@@ -241,27 +241,36 @@ function App() {
 
   let content = [];
 
-  
+  let amThanhKhiTraLoi = new Howl({
+    src: ["/sounds/am-thanh-khi-tra-loi-first.mp3"],
+    loop: false,
+    html5: true,
+  });
+
   let amThanhKhiChon = new Howl({
     src: ["/sounds/am-thanh-khi-chon.mp3"],
     loop: false,
     html5: true,
   });
+
   let amThanhTraloiDung = new Howl({
     src: ["/sounds/am-thanh-tra-loi-dung.mp3"],
     loop: false,
     html5: true,
   });
+
   let amThanhTraLoiSai = new Howl({
     src: ["/sounds/am-thanh-tra-loi-sai.mp3"],
     loop: false,
     html5: true,
   });
+
   let amThanh5050 = new Howl({
     src: ["/sounds/am-thanh-5050.mp3"],
     loop: false,
     html5: true,
   });
+
   let amThanhKhiHoiKhanGia = new Howl({
     src: ["/sounds/am-thanh-khi-hoi-y-kien-khan-gia.mp3"],
     loop: false,
@@ -271,6 +280,7 @@ function App() {
   const intoTheGame = () => {
     setStartPage(false);
     setMainPage(true);
+    amThanhKhiTraLoi.play();
   };
 
   const exitBtn = () => {
