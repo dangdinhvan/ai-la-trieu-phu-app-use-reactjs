@@ -241,12 +241,7 @@ function App() {
 
   let content = [];
 
-  let amThanhKhiTraLoi = new Howl({
-    src: ["/sounds/am-thanh-khi-tra-loi-first.mp3"],
-    loop: true,
-    html5: true,
-    volume: 0.5,
-  });
+  
   let amThanhKhiChon = new Howl({
     src: ["/sounds/am-thanh-khi-chon.mp3"],
     loop: false,
@@ -276,7 +271,6 @@ function App() {
   const intoTheGame = () => {
     setStartPage(false);
     setMainPage(true);
-    amThanhKhiTraLoi.play();
   };
 
   const exitBtn = () => {
